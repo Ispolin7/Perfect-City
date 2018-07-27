@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block script %}
+<script src="https://maps.googleapis.com/maps/api/js?key={{ key | urlencode }}&v=3.exp"></script>
+<script src="/static/scripts.js"></script>
+<script>
+    var longitude = {{ city['longitude'] }};
+    var latitude = {{ city['latitude'] }};
+    var postalCode = {{ city['postal_code'] }};
+</script>
+{% endblock %}
+{% block title %}perfect city{% endblock %}
+    {% block main %}
+    <div id="info">{{info}}</div>
+    <div class="container">
+        <div id="map-canvas"></div>
+    </div>
+    {% endblock %}

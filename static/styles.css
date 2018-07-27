@@ -1,0 +1,63 @@
+/* Allow map to fill viewport */
+html, body, #map-canvas, .container{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+#form{
+    position: absolute;
+    top: 28px;
+    width: 100%;
+}
+#form .form-group{
+    display: flex;
+    justify-content: center;
+}
+
+#errorBlock {
+    color: red;
+}
+
+.navbar{
+    height: 10%;
+}
+
+.container {
+     max-width: 100%;
+     display: inline-block;
+}
+#align{
+    text-align: right;
+    margin-right: 3%;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.sort{margin-left: 10px;}
+.city{margin-right: 10px;}
+.shadow{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+.photo{
+    width:50%;
+    float:left;
+    margin: 7px 7px 7px 0;
+}
+
+.form-group{
+    width: 30%;
+}
+#request{
+    width:100%;
+}
+
+

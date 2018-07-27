@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div id="errorBlock" class = "shadow">{{message}}</div>
+        <div class="form-group shadow">
+            <input autofocus class="form-control" name="username" placeholder="Username" type="text" required/>
+        </div>
+        <div class="form-group shadow">
+            <input class="form-control" name="password" placeholder="Password" type="password" required/>
+        </div>
+        <button class="btn btn-primary shadow" type="submit">Log In</button>
+    </form>
+{% endblock %}

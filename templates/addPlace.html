@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block title %}add new place{% endblock %}
+{% block main %}
+   <form id="add"action="/add_place" method="post" enctype=multipart/form-data>
+       <div id="errorBlock" class="shadow">{{message}}</div>
+        <div class="form-group shadow">
+            <input autofocus class="form-control" name="name" placeholder="Name" type="text" required />
+        </div>
+        <div class="form-group shadow">
+                <label for="description">Description</label>
+                <textarea class="form-control" name="description" rows="3" form="add"></textarea>
+            </div>
+        <div class="form-group shadow">
+            <input class="form-control" name="file" type="file" required />
+        </div>
+        <input id="lat" name="lat" type="hidden" value="{{lat}}"/>
+        <input id="lng" name="lng" type="hidden" value="{{lng}}"/>
+        <button class="btn btn-primary shadow" type="submit">ADD</button>
+
+    </form>
+{% endblock %}

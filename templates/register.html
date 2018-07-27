@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block script %}
+<script src="/static/register_script.js"></script>
+{% endblock %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<style>html, body, #map-canvas, .container{ overflow: visible;}</style>
+<div class = "shadow p-3 mb-5 bg-white rounded">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input class="form-control" id="request" placeholder="Enter city name or postal code" type="search"/>
+                </div>
+                <div class="btn btn-primary find">Find</div>
+            </form>
+</div>
+    <form action="/register" method="post">
+       <div id="errorBlock">{{message}}</div>
+
+
+        <table id ="emptybody" class = "hidden table shadow">
+            <tr>
+                <th></th>
+                <th>Country</th>
+                <th>Postal code</th>
+                <th>Name</th>
+                <th>Admin name</th>
+                <th>Admin code</th>
+            </tr>
+        </table>
+
+        <div class="form-group hidden shadow">
+            <input autofocus class="form-control" name="username" placeholder="Username" type="text" required />
+        </div>
+        <div class="form-group hidden shadow">
+            <input class="form-control" name="email" placeholder="Email" type="email" required/>
+        </div>
+        <div class="form-group hidden shadow">
+            <input class="form-control" id="pass" name="password" placeholder="Password" type="password" required/>
+        </div>
+        <div class="form-group hidden shadow">
+            <input class="form-control" id="repPass" name="confirmation" placeholder="Repeat password" type="password" required/>
+        </div>
+        <button class="btn btn-primary hidden shadow" type="submit">Register</button>
+
+    </form>
+</div>
+{% endblock %}

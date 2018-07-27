@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Place{% endblock %}
+    {% block main %}
+    <style>
+        html, body, #map-canvas, .container{ overflow: visible;}
+    </style>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <img class = "photo" src="/static/img/{{ place.image }}" alt="альтернативный текст">
+        <h2>{{ place.name }}</h2>
+        <p>{{ place.description }}</p>
+    <br clear="left">
+    {% if session.user_id == place.created_by %}
+    <form action = "/places/{{ place.id }}/update" method="post" id="comleted">
+            <button type="submit" class="btn btn-primary shadow">Completed</button>
+        </form>
+    {% endif %}
+    </div>
+        {% for comment in comments %}
+        <p id = "align"> {{ comment.created_at }} <b>{{ comment.created_by }}</b> wrote :</p>
+        <div class="shadow p-3 mb-5 bg-white rounded"> {{ comment.description }} </div>
+        {% endfor %}
+
+        <form action = "/places/{{ place.id }}/add_comment" method="post" id="add">
+            <div class="form-group shadow">
+                <label for="comment">Add your comment</label>
+                <textarea class="form-control" name="comment" rows="3" form="add" ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary shadow">Add</button>
+        </form>
+
+    {% endblock %}
